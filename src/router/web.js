@@ -7,8 +7,12 @@ let initWebRoutes = (app) =>{
     router.get("/",(req,res) =>{
             return res.send("hello quang loc")
     })
-    router.get("/quanglocdev",homeController.getHomePage)
     router.get("/cart",cartController.cartController)
+    router.get("/quanglocdev",homeController.getHomePage)
+    router.get("/crud",homeController.getCRUD)
+    router.post("/post-crud",homeController.postCRUD)
+
+
     return app.use("/",router)
 }
 module.exports = initWebRoutes

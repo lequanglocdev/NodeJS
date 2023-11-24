@@ -14,10 +14,20 @@ let getHomePage = async(req,res) =>{
     }
 
 }
+let getCRUD = (req,res) =>{
+    return res.render('crud.ejs')
+}
 // Object:{
 //     key:'',
 //     value:''
 // }
+
+let postCRUD = (req,res) =>{
+    console.log(req.body)
+    return res.send('post crud')
+}
 module.exports ={
-    getHomePage:getHomePage
+    getHomePage:getHomePage,
+    getCRUD:getCRUD,
+    postCRUD:postCRUD
 }

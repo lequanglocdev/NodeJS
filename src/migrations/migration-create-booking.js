@@ -21,7 +21,7 @@ module.exports = {
       doctorId: {
         type: Sequelize.INTEGER
       },
-      patientId: {
+      patientId : {
         type: Sequelize.INTEGER
       },
       date: {
