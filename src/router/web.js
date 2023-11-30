@@ -1,13 +1,12 @@
 import express from "express"
 import homeController from "../controllers/homeController";
-import cartController from "../controllers/cartController";
+import userController from '../controllers/userController.js'
 let router = express.Router();
 
 let initWebRoutes = (app) =>{
     router.get("/",(req,res) =>{
             return res.send("hello quang loc")
     })
-    router.get("/cart",cartController.cartController)
     router.get("/quanglocdev",homeController.getHomePage)
     router.get("/crud",homeController.getCRUD)
 
@@ -17,6 +16,11 @@ let initWebRoutes = (app) =>{
     router.get("/edit-crud",homeController.editGetCRUD)
     router.post("/put-crud",homeController.putCRUD)
     router.get("/delete-crud",homeController.deleteCRUD)
+
+    // -------------------------
+
+    router.post('/api/login',userController.handleLogin)
+
     return app.use("/",router)
 }
 module.exports = initWebRoutes
